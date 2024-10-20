@@ -11,7 +11,7 @@ pipeline {
         stage('Push Image') {
             steps {
                 script {
-                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
+                    docker.withRegistry('https://hub.docker.com/', 'dockerhub-credentials') {
                         docker.image('nginx_image').push()
                     }
                 }
